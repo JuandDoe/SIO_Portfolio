@@ -1,3 +1,9 @@
+---
+layout: page
+title: Documentation Pikascrape
+---
+
+
 # Documentation Pikascrape
 
 ![Logo Pikascrape](images/logo_pikascrape.png)
