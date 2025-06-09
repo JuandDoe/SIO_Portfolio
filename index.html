@@ -5,22 +5,17 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Mon Portfolio | Antoine GSCHWIND</title>
   <style>
-    /* Reset basique */
     * { margin: 0; padding: 0; box-sizing: border-box; }
     body { font-family: Arial, sans-serif; line-height: 1.6; color: #333; scroll-behavior: smooth; }
     a { color: #007BFF; text-decoration: none; }
     a:hover { text-decoration: underline; }
 
-    /* Container */
     .container { max-width: 900px; margin: 0 auto; padding: 20px; }
     section { margin-bottom: 60px; opacity: 0; transform: translateY(20px); transition: opacity 0.6s ease-out, transform 0.6s ease-out; }
     section.visible { opacity: 1; transform: translateY(0); }
-
-    /* Hero */
     .hero { text-align: center; padding: 100px 20px; background: linear-gradient(135deg, #f5f5f5 0%, #e0e0e0 100%); position: relative; }
     .hero nav { display: none; }
 
-    /* Navigation Burger */
     .nav-toggle {
       position: absolute;
       top: 20px;
@@ -61,7 +56,6 @@
     nav li { margin: 20px 0; text-align: center; }
     nav a { font-size: 1.2rem; }
 
-    /* Desktop nav */
     @media(min-width: 768px) {
       .nav-toggle { display: none; }
       nav { position: static; width: auto; height: auto; background: none; box-shadow: none; padding: 0; display: block; }
@@ -69,19 +63,37 @@
       nav li { margin: 0; }
     }
 
-    /* Image hover effect */
-    .item img { transition: transform 0.3s; }
+    .item img { transition: transform 0.3s; max-width: 100%; height: auto; }
     .item img:hover { transform: scale(1.05); }
 
-    /* Contact */
     #contact form { display: flex; flex-direction: column; }
     #contact label { margin: 10px 0 5px; }
     #contact input, #contact textarea { padding: 8px; border: 1px solid #ccc; border-radius: 4px; }
     #contact button { margin-top: 15px; padding: 10px; border: none; border-radius: 4px; background: #007BFF; color: white; cursor: pointer; }
     #contact button:hover { background: #0056b3; }
 
-    /* Links */
     .links a { margin-right: 15px; }
+
+    /* Section Documentation */
+    #documentation ul { list-style: none; padding-left: 0; }
+    #documentation li { margin-bottom: 10px; }
+
+    /* Responsive images and buttons */
+    img { max-width: 100%; height: auto; }
+    button { width: 100%; max-width: 280px; margin-top: 10px; }
+    .item { margin-bottom: 30px; }
+
+    /* Responsive container */
+    @media (max-width: 600px) {
+      .container { padding: 10px; }
+      .hero { padding: 60px 10px; }
+      h1 { font-size: 1.7rem; }
+      h2 { font-size: 1.3rem; }
+      button { font-size: 1rem; }
+    }
+
+    /* Overflow fix for horizontal scrolling */
+    body { overflow-x: auto; }
   </style>
 </head>
 <body>
@@ -97,6 +109,7 @@
       <ul>
         <li><a href="#about">À propos</a></li>
         <li><a href="#veille">Veille Technologique</a></li>
+        <li><a href="#documentation">Documentation</a></li>
         <li><a href="#projects">Projets</a></li>
       </ul>
     </nav>
@@ -108,19 +121,15 @@
     </section>
     <section id="bts" class="section">
       <h2>Présentation BTS SIO</h2>
-      <p>Le BTS Services Informatiques aux Organisations (SIO) est un diplôme national de niveau Bac +2 conçu pour former des techniciens capables de répondre aux besoins informatiques des entreprises et des organisations. 
-        Promotion 2023-2025, option <strong>SLAM</strong> (Solutions Logicielles et Applications Métiers).</p>
-
+      <p>Le BTS Services Informatiques aux Organisations (SIO) est un diplôme national de niveau Bac +2 conçu pour former des techniciens capables de répondre aux besoins informatiques des entreprises. Promotion 2023-2025, option <strong>SLAM</strong> (Solutions Logicielles et Applications Métiers).</p>
       <h3>Objectifs de la formation</h3>
-      <p>Les objectifs principaux du BTS SIO sont de maîtriser les systèmes informatiques via l'installation, la configuration et la maintenance des infrastructures matérielles et logicielles. Il vise également à développer des compétences solides en conception, programmation et test de logiciels répondant aux besoins spécifiques des utilisateurs, tout en assurant la sécurité des données et la continuité des services.</p>
-
+      <p>Les objectifs principaux du BTS SIO sont de maîtriser les systèmes informatiques via l'installation, la configuration et la maintenance des infrastructures matérielles et logicielles. Il vise aussi à développer des compétences en développement d'applications et en gestion de projet.</p>
       <h3>Spécialités</h3>
       <p>Deux parcours sont proposés :</p>
       <ul>
         <li><strong>SLAM</strong> : Développement d’applications web et mobiles, conception de bases de données, maintenance des logiciels et assistance aux utilisateurs.</li>
         <li><strong>SISR</strong> : Administration des réseaux informatiques, gestion des serveurs et postes clients, sécurisation des infrastructures.</li>
       </ul>
-
       <h3>Programme</h3>
       <p>Le cursus combine des enseignements théoriques et des mises en pratique concrètes :</p>
       <ul>
@@ -128,79 +137,86 @@
         <li><em>Enseignements professionnels</em> : Développement informatique, gestion des réseaux, cybersécurité et gestion de projet.</li>
         <li><em>Stages en entreprise</em> : 10 à 12 semaines pour acquérir une expérience professionnelle.</li>
       </ul>
-
       <h3>Débouchés</h3>
-      <p>Après un BTS SIO, les étudiants peuvent poursuivre en licence professionnelle, école d’ingénieurs ou Bachelor informatique. Les métiers visés incluent développeur web ou mobile, administrateur systèmes et réseaux, technicien support informatique ou analyste en cybersécurité.</p>
+      <p>Après un BTS SIO, les étudiants peuvent poursuivre en licence professionnelle, école d’ingénieurs ou Bachelor informatique. Les métiers visés incluent développeur web ou mobile, administrateur systèmes et réseaux, technicien support, etc.</p>
     </section>
     <section id="veille" class="section">
       <h2>Veille Technologique : GrapheneOS</h2>
       <img src="https://www.nobsbitcoin.com/content/images/size/w2000/2023/08/logo_graphene-white.png" alt="Logo GrapheneOS" />
-      
+
+      <!-- Correction : un seul <summary> par <details>, et fermeture correcte -->
       <details id="veille-resume" open>
         <summary><strong>Résumé</strong></summary>
-        <summary><strong>Résumé</strong></summary>
-        <p>GrapheneOS est un système d’exploitation mobile open source dérivé d’AOSP qui met l’accent sur la sécurité et la confidentialité des utilisateurs. Développé et maintenu par une équipe indépendante, il est officiellement disponible uniquement sur les appareils Google Pixel, garantissant ainsi un niveau de protection matériel et logiciel élevé.</p>
+        <p>GrapheneOS est un système d’exploitation mobile open source dérivé d’AOSP qui met l’accent sur la sécurité et la confidentialité des utilisateurs. Développé et maintenu par une communauté indépendante, il apporte de nombreuses améliorations en matière de sécurité par rapport à Android classique.</p>
       </details>
 
       <details>
         <summary><strong>1. Définition et lien avec AOSP</strong></summary>
-        <p>Le projet GrapheneOS utilise l’Android Open Source Project (AOSP) comme fondation. À partir de ces sources, il intègre des durcissements du noyau tels que l’Address Space Layout Randomization (ASLR), les protections Stack Smashing Protection (SSP) et Control Flow Integrity (CFI), ainsi qu’une pile d’appels ombragée (Shadow Call Stack). Par ailleurs, chaque application se voit attribuer un sandbox réseau granulaire, limitant ses communications externes afin de réduire la surface d’attaque. Enfin, GrapheneOS met en place des mécanismes avancés de signature et de vérification pour s’assurer de l’intégrité du système à chaque démarrage.</p>
+        <p>Le projet GrapheneOS utilise l’Android Open Source Project (AOSP) comme fondation. À partir de ces sources, il intègre des durcissements du noyau tels que l’Address Space Layout Randomization (ASLR), la fortification des allocations mémoire, etc.</p>
       </details>
 
       <details>
         <summary><strong>2. Fermeture partielle des sources Android</strong></summary>
-        <p>Depuis le 27 mars 2025, Google a choisi de porter le développement principal d’Android sur des branches privées internes, ne publiant en open source que les tags dits « android-latest-release » correspondant aux versions stables. Cette décision vise à accélérer l’innovation tout en préservant la stabilité des livraisons publiques. GrapheneOS, qui se repose exclusivement sur ces tags, n’est pas affecté dans son processus de build et peut continuer à opérer des backports de correctifs et de fonctionnalités de manière transparente.</p>
+        <p>Depuis le 27 mars 2025, Google a choisi de porter le développement principal d’Android sur des branches privées internes, ne publiant en open source que les tags dits « android-latest-release ». Cela limite la transparence et la rapidité d’accès aux nouveautés pour les distributions tierces.</p>
         <img src="https://source.android.com/static/docs/setup/images/release-lifecycle-new.png" alt="Schéma branches AOSP" />
       </details>
 
       <details>
         <summary><strong>3. Avantages de GrapheneOS</strong></summary>
-        <p>Par rapport à Android stock, GrapheneOS propose des protections noyau beaucoup plus avancées, incluant ASLR renforcé, SSP et CFI, ainsi que des filtres de réseau par application qui n’existent pas dans la version officielle de Google. L’absence par défaut des services Google élimine toute forme de télémétrie et de dépendances propriétaires, tandis que l’outil Auditor vérifie automatiquement l’intégrité de l’OS à chaque démarrage.</p>
-        <p>En comparaison avec d’autres distributions AOSP tierces, GrapheneOS conserve les applications système standard d’AOSP tout en renforçant leur sécurité interne. Contrairement à certaines ROMs communautaires dépendant de mainteneurs volontaires pour les mises à jour, il utilise Verified Boot v4 et un mécanisme OTA automatisé fiable pour délivrer rapidement les correctifs.</p>
-        <p>Enfin, face à iOS, GrapheneOS se distingue par sa transparence : l’intégralité du code est publiée sous licences permissives, ce qui permet à toute la communauté de l’auditer. L’utilisateur bénéficie d’options de personnalisation étendues, comme le contrôle réseau par application ou l’accès à des modules de sécurité avancés tels que Vanadium ou Secure Camera. Le modèle de sécurité est conçu dès la base plutôt qu’appuyé sur l’obscurité du code.</p>
-        <br>
-
-        <p>><a href="https://eylenburg.github.io/android_comparison.html" target="_blank">Voir un comparatif des principales ROMS android</a></p>
+        <p>Par rapport à Android stock, GrapheneOS propose des protections noyau beaucoup plus avancées, incluant ASLR renforcé, SSP et CFI, ainsi que des filtres de réseau par application qui n’existent pas sur Android classique.</p>
+        <p>En comparaison avec d’autres distributions AOSP tierces, GrapheneOS conserve les applications système standard d’AOSP tout en renforçant leur sécurité interne. Contrairement à certaines ROMs, il n’ajoute pas de bloatware.</p>
+        <p>Enfin, face à iOS, GrapheneOS se distingue par sa transparence : l’intégralité du code est publiée sous licences permissives, ce qui permet à toute la communauté de l’auditer.</p>
+        <p><a href="https://eylenburg.github.io/android_comparison.html" target="_blank">Voir un comparatif des principales ROMS android</a></p>
       </details>
-
       <details>
         <summary><strong>4. Limitations et support Pixel</strong></summary>
-        <p>GrapheneOS n’est officiellement supporté que sur les téléphones Google Pixel en raison de la nécessité d’un bootloader déverrouillable, indispensable pour installer l’OS et importer ses clés de vérification. De plus, la présence de la puce sécurisée Titan M ou Titan M2 sur ces appareils garantit une protection matérielle renforcée des clés cryptographiques et des opérations de démarrage sécurisé. Enfin, la promesse d’un cycle de mises à jour logicielles prolongé par Google assure que les correctifs de sécurité et les améliorations de l’OS sont disponibles à long terme.</p>
-        <br>
-
-        <p>><a href="https://grapheneos.org/faq#device-support" target="_blank">Liste des appareils supportés</a></p>
+        <p>GrapheneOS n’est officiellement supporté que sur les téléphones Google Pixel en raison de la nécessité d’un bootloader déverrouillable, indispensable pour installer l’OS et implanter les sécurités.</p>
+        <p><a href="https://grapheneos.org/faq#device-support" target="_blank">Liste des appareils supportés</a></p>
       </details>
 
-            <h2>Veille Technologique : Obtainium, loi narcotrafic & Cypherpunk's Manifesto</h2>
-
+      <h2>Veille Technologique : Obtainium, loi narcotrafic & Cypherpunk's Manifesto</h2>
       <img src="https://pbs.twimg.com/media/GLoyclHXMAAAOHf?format=jpg&name=900x900" alt="Hugues citation"/>
-
-      <summary><strong>Résumé</strong></summary
-                                        
-        <p>Signal est une solution simple et relativement discrète de messagerie. Le chiffrement de l'application est critiqué par le gouvernement au titre qu'il facilite les communications entre narco-traficants. Le gouvernement envisage l'interdiction de Signal si une back-door ne permet pas aux autoritées de déchiffrer les communications considérées suspectes.</p>
+      <details>
+        <summary><strong>Résumé</strong></summary>
+        <p>Signal est une solution simple et relativement discrète de messagerie. Le chiffrement de l'application est critiqué par le gouvernement au titre qu'il facilite les communications entre narcotrafiquants et terroristes, mais il reste essentiel pour la protection de la vie privée.</p>
       </details>
-
       <details>
         <summary><strong>1. Hugues et la naissance du mouvement cypherpunk</strong></summary>
-        <p>Le mouvement cypherpunk, né au début des années 1990, regroupe des activistes et des développeurs convaincus que la cryptographie est le meilleur moyen de protéger la vie privée et les libertés individuelles à l’ère numérique. Dans son célèbre “A Cypherpunk’s Manifesto” (1993), Eric Hughes affirme que « la vie privée est nécessaire pour une société libre », et appelle chaque individu à utiliser des algorithmes de chiffrement pour garantir la confidentialité de ses échanges, échapper à la surveillance de masse et défendre ses droits fondamentaux.</p>
-        <br>
-        <p>><a href="https://www.activism.net/cypherpunk/manifesto.html" target="_blank">Lire le manifeste en intégralité</a></p>
+        <p>Le mouvement cypherpunk, né au début des années 1990, regroupe des activistes et des développeurs convaincus que la cryptographie est le meilleur moyen de protéger la vie privée et les libertés individuelles.</p>
+        <p><a href="https://www.activism.net/cypherpunk/manifesto.html" target="_blank">Lire le manifeste en intégralité</a></p>
       </details>
-
       <details>
         <summary><strong>2. L'interdiction possible de Signal en France</strong></summary>
-        <p>Signal pourrait être interdit en France si la loi « Narcotrafic » adoptée obligeait les applications de messagerie à intégrer une « tierce partie silencieuse » (une sorte de porte dérobée) permettant aux autorités de déchiffrer les échanges sans informer les utilisateurs. Face à cette exigence, incompatible avec le chiffrement de bout en bout et la promesse de confidentialité de Signal, l’éditeur a menacé de retirer l’application du Play Store et de l’App Store français, privant ainsi les utilisateurs d’un canal de communication ne respectant plus leurs libertés.</p>
-        <br>
-        <p>><a href="https://www.publicsenat.fr/actualites/politique/narcotrafic-que-contient-la-proposition-de-loi-en-passe-detre-adoptee-definitivement" target="_blank">Source</a></p>
+        <p>Signal pourrait être interdit en France si la loi « Narcotrafic » adoptée obligeait les applications de messagerie à intégrer une « tierce partie silencieuse » (une sorte de porte dérobée).</p>
+        <p><a href="https://www.publicsenat.fr/actualites/politique/narcotrafic-que-contient-la-proposition-de-loi-en-passe-detre-adoptee-definitivement" target="_blank">Source</a></p>
       </details>
-
       <details>
         <summary><strong>3. L'importance de l'autonomie numérique, Obtainium : un exemple de contournement</strong></summary>
-        <img src="https://miro.medium.com/v2/resize:fit:1400/format:webp/1*cEtyPkbyCOkH4GT__B_0rA.jpeg" alt="Obtainium logo"</>
-        <p>L’autonomie numérique est cruciale pour garantir que chacun puisse accéder à des outils essentiels, même en cas de censure ou de retrait des boutiques officielles ; Obtainium illustre parfaitement cet enjeu : en permettant de récupérer, vérifier et compiler soi-même une application (comme Signal) directement depuis ses sources, il offre un contournement fiable aux interdictions ou aux exigences légales susceptibles d’imposer des portes dérobées, assurant ainsi la continuité et la souveraineté de la confidentialité.</p>
-      
+        <img src="https://miro.medium.com/v2/resize:fit:1400/format:webp/1*cEtyPkbyCOkH4GT__B_0rA.jpeg" alt="Obtainium logo"/>
+        <p>L’autonomie numérique est cruciale pour garantir que chacun puisse accéder à des outils essentiels, même en cas de censure ou de retrait des boutiques officielles ; Obtainium illustre cette philosophie en permettant l’installation d’applications open source en dehors du Google Play Store.</p>
       </details>
+    </section>
 
+    <!-- SECTION DOCUMENTATION AJOUTÉE -->
+    <section id="documentation" class="section">
+      <h2>Documentation</h2>
+      <ul>
+        <li>
+          <a href="docs/placeholder1.pdf" target="_blank" download>
+            Documentation Projet 1 (PDF)
+          </a>
+        </li>
+        <li>
+          <a href="docs/placeholder2.pdf" target="_blank" download>
+            Documentation Projet 2 (PDF)
+          </a>
+        </li>
+        <li>
+          <a href="docs/placeholder3.pdf" target="_blank" download>
+            Documentation Générale (PDF)
+          </a>
+        </li>
+      </ul>
     </section>
 
     <section id="projects" class="section">
@@ -209,20 +225,19 @@
         <h3>Pikascrape</h3>
         <p>Scraper Java pour suivre les prix de cartes Pokémon sur Cardmarket.</p>
         <a href="pikascrape/pikascrape_documentation.md" download>
-            <button style="padding: 10px 20px; background-color: #2ea44f; color: white; border: none; border-radius: 5px; font-size: 16px; cursor: pointer;">
-              Documentation
-            </button>
-          </a>
+          <button>
+            Documentation
+          </button>
+        </a>
       </div>
       <div class="item">
         <h3>Flapnux</h3>
         <p>Jeu Flappy Bird-like sur Android.</p>
         <a href="https://github.com/JuandDoe/Flapnux/releases/download/1.0.1/flapnus_1.0.1.apk" download>
-            <button style="padding: 10px 20px; background-color: #2ea44f; color: white; border: none; border-radius: 5px; font-size: 16px; cursor: pointer;">
-              Télécharger l'APK
-            </button>
-          </a>
-          
+          <button>
+            Télécharger l'APK
+          </button>
+        </a>
       </div>
       <div class="item">
         <h3>AppliSTT</h3>
