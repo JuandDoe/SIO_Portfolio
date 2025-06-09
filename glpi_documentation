@@ -1,0 +1,47 @@
+**GLPI INSTALLATION**
+
+GLPI (Gestionnaire Libre de Parc Informatique) est une solution open source conçue pour centraliser et automatiser la gestion des ressources informatiques et le support aux utilisateurs. Initialement développée en 2003, GLPI propose un ensemble complet de fonctionnalités : inventaire automatique des équipements (ordinateurs, serveurs, imprimantes, périphériques réseau), gestion des licences logicielles, suivi des commandes et contrats, ainsi qu’un module de ticketing pour les demandes d’assistance (helpdesk). Grâce à son interface web intuitive, chaque service (administrateurs système, techniciens, utilisateurs finaux) peut suivre en temps réel l’état des ressources et des tickets. De plus, GLPI supporte l’ajout de plugins pour étendre ses capacités (monitoring, tableau de bord avancé, automatisation de tâches), offre des rapports détaillés sur l’état du parc et facilite la planification des renouvellements de matériel. Son caractère libre et modulaire le rend particulièrement apprécié dans les PME, les institutions publiques et les grandes organisations cherchant à optimiser la gestion de leur infrastructure sans coûts de licences élevés.
+
+
+
+![](/home/ant/Pictures/Screenshots/Screenshot from 2025-06-09 22-10-09.png)
+
+```bash
+MARIADB_ROOT_PASSWORD=changeme
+MARIADB_DATABASE=glpi
+MARIADB_USER=glpi_user
+MARIADB_PASSWORD=changeme
+```
+
+```bash
+version: "3.2"
+
+services:
+#MariaDB Container
+  mariadb:
+    image: mariadb:10.7
+    container_name: mariadb
+    hostname: mariadb
+    volumes:
+      - /var/lib/mysql:/var/lib/mysql
+    env_file:
+      - ./mariadb.env
+    restart: always
+
+#GLPI Container
+  glpi:
+    image: diouxx/glpi
+    container_name : glpi
+    hostname: glpi
+    ports:
+      - "80:80"
+    volumes:
+      - /etc/timezone:/etc/timezone:ro
+      - /etc/localtime:/etc/localtime:ro
+      - /var/www/html/glpi/:/var/www/html/glpi
+    environment:
+      - TIMEZONE=Europe/Brussels
+    restart: always
+
+```
+
