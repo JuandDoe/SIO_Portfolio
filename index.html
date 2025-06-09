@@ -150,7 +150,7 @@
       <details>
         <summary><strong>2. Fermeture partielle des sources Android</strong></summary>
         <p>Depuis le 27 mars 2025, Google a choisi de porter le développement principal d’Android sur des branches privées internes, ne publiant en open source que les tags dits « android-latest-release » correspondant aux versions stables. Cette décision vise à accélérer l’innovation tout en préservant la stabilité des livraisons publiques. GrapheneOS, qui se repose exclusivement sur ces tags, n’est pas affecté dans son processus de build et peut continuer à opérer des backports de correctifs et de fonctionnalités de manière transparente.</p>
-        <img src="<VOTRE_LIEN_BRANCHES>" alt="Schéma branches AOSP" />
+        <img src="https://source.android.com/static/docs/setup/images/release-lifecycle-new.png" alt="Schéma branches AOSP" />
       </details>
 
       <details>
@@ -158,13 +158,13 @@
         <p>Par rapport à Android stock, GrapheneOS propose des protections noyau beaucoup plus avancées, incluant ASLR renforcé, SSP et CFI, ainsi que des filtres de réseau par application qui n’existent pas dans la version officielle de Google. L’absence par défaut des services Google élimine toute forme de télémétrie et de dépendances propriétaires, tandis que l’outil Auditor vérifie automatiquement l’intégrité de l’OS à chaque démarrage.</p>
         <p>En comparaison avec d’autres distributions AOSP tierces, GrapheneOS conserve les applications système standard d’AOSP tout en renforçant leur sécurité interne. Contrairement à certaines ROMs communautaires dépendant de mainteneurs volontaires pour les mises à jour, il utilise Verified Boot v4 et un mécanisme OTA automatisé fiable pour délivrer rapidement les correctifs.</p>
         <p>Enfin, face à iOS, GrapheneOS se distingue par sa transparence : l’intégralité du code est publiée sous licences permissives, ce qui permet à toute la communauté de l’auditer. L’utilisateur bénéficie d’options de personnalisation étendues, comme le contrôle réseau par application ou l’accès à des modules de sécurité avancés tels que Vanadium ou Secure Camera. Le modèle de sécurité est conçu dès la base plutôt qu’appuyé sur l’obscurité du code.</p>
-        <img src="<VOTRE_LIEN_COMPARAISON>" alt="Comparaison GrapheneOS" />
+        <p>Voir un comparatif des principales ROMS android : https://eylenburg.github.io/android_comparison.htm</p>
       </details>
 
       <details>
         <summary><strong>4. Limitations et support Pixel</strong></summary>
         <p>GrapheneOS n’est officiellement supporté que sur les téléphones Google Pixel en raison de la nécessité d’un bootloader déverrouillable, indispensable pour installer l’OS et importer ses clés de vérification. De plus, la présence de la puce sécurisée Titan M ou Titan M2 sur ces appareils garantit une protection matérielle renforcée des clés cryptographiques et des opérations de démarrage sécurisé. Enfin, la promesse d’un cycle de mises à jour logicielles prolongé par Google assure que les correctifs de sécurité et les améliorations de l’OS sont disponibles à long terme.</p>
-        <img src="<VOTRE_LIEN_PIXELS>" alt="Liste des Pixel compatibles" />
+        <p>Liste des appareils supportés : https://grapheneos.org/faq#device-support</p>
       </details>
 
             <h2>Veille Technologique : Obtainium, loi narcotrafic & Cypherpunk's Manifesto</h2>
