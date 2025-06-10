@@ -1,0 +1,46 @@
+**Partage d'un répertoire de fichiers entre un hôte et un invité Linux via Vmware Workstation**
+
+```bash
+sudo dpkg-reconfigure keyboard-configuration
+Generic 105-key (Intl) PC
+French
+```
+
+![](/home/ant/Pictures/Screenshots/Screenshot from 2025-06-10 02-36-35.png)
+
+```bash
+sudo apt update
+sudo apt install open-vm-tools open-vm-tools-desktop
+sudo reboot
+```
+
+![](/home/ant/Pictures/Screenshots/Screenshot from 2025-06-10 02-43-38.png)
+
+![](/home/ant/Pictures/Screenshots/Screenshot from 2025-06-10 02-47-08.png)
+
+```bash
+sudo apt install fuse
+sudo mkdir -p /mnt/hgfs
+sudo vmhgfs-fuse .host:/ /mnt/hgfs -o allow_other
+ls /mnt/hgfs
+```
+
+![](/home/ant/Pictures/Screenshots/Screenshot from 2025-06-10 03-03-26.png)
+
+```bash
+sudo nano /etc/fstab
+```
+
+```bash
+.host:/    /mnt/hgfs    fuse.vmhgfs-fuse    allow_other,defaults    0    0
+```
+
+![](/home/ant/Pictures/Screenshots/Screenshot from 2025-06-10 03-10-35.png)
+
+```bash
+mount | grep hgfs
+```
+
+![](/home/ant/Pictures/Screenshots/Screenshot from 2025-06-10 03-15-31.png)
+
+![](/home/ant/Pictures/Screenshots/Screenshot from 2025-06-10 03-20-11.png)
